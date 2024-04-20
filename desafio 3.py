@@ -1,0 +1,6 @@
+n = input('digite algo= ')
+print('o tipo primitivo aprensentado é:', type(n))
+print('é um número?', n.isnumeric())
+print('é formado por letras?', n.isalpha())
+print('é formado apenas por letras maiusculas?', n.isupper())
+print('é formado apenas por letras minusculas? ', n.islower())
