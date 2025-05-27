@@ -33,13 +33,13 @@ def buscarProduto(produto_id: int):
 @app.post("/produtos", response_model=Produto)
 def cadastrarProduto(produto: Produto):
     for p in produtos:
-        if (produtos["nome"] == produto.nome):
+        if p["nome"].lower() == produto.nome.lower():
             raise HTTPException(status_code=400, detail="Já existe um produto com esse nome")
 
     novoProduto = produto.dict()
     produtos.append(novoProduto)
-
     return novoProduto
+
 
 
 @app.put("/produtos/{produto_id}", response_model=Produto)
